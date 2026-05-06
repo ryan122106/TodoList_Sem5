@@ -23,6 +23,7 @@ class AddTodoFragment : Fragment(R.layout.add_todo) {
         val etDetails = view.findViewById<EditText>(R.id.inputDetails
         )
         val btnAdd = view.findViewById<Button>(R.id.btnAdd)
+        val btnCancel = view.findViewById<Button>(R.id.btnCancel)
 
         btnAdd.setOnClickListener {
 
@@ -53,6 +54,10 @@ class AddTodoFragment : Fragment(R.layout.add_todo) {
             etDetails.text.clear()
 
             // 🔥 GO BACK TO LIST PAGE
+            parentFragmentManager.popBackStack()
+        }
+
+        btnCancel.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
     }

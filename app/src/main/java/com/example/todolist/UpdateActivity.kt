@@ -34,7 +34,7 @@ class UpdateActivity : AppCompatActivity() {
         val etSynonym = findViewById<EditText>(R.id.inputSynonyms)
         val etDetails = findViewById<EditText>(R.id.inputDetails)
         val btnSave = findViewById<Button>(R.id.btnSave)
-
+        val btnCancel = findViewById<Button>(R.id.btnCancel)
         // set old data
         etTitle.setText(title)
         etMeaning.setText(meaning)
@@ -60,6 +60,10 @@ class UpdateActivity : AppCompatActivity() {
                 setResult(RESULT_OK)
                 finish()
             }
+
+        }
+        btnCancel.setOnClickListener {
+            finish()
         }
     }
 }
